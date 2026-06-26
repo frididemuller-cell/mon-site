@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Commande</title>
+
 <style>
 body{
 font-family:Arial;
@@ -20,6 +22,7 @@ input{
 width:100%;
 padding:10px;
 margin:10px 0;
+box-sizing:border-box;
 }
 button{
 width:100%;
@@ -27,40 +30,52 @@ padding:12px;
 background:#007bff;
 color:white;
 border:none;
+cursor:pointer;
 }
 </style>
-</head>
 
+</head>
 <body>
 
+<form action="https://formsubmit.co/Faneltarud@gmail.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://canva.link/eus05ln0obnz9ae">
+
 <div id="page1" class="page active">
+
 <h2>Informations de livraison</h2>
 
-<input type="text" placeholder="Nom">
-<input type="text" placeholder="Prénom">
-<input type="text" placeholder="Adresse de livraison">
-<input type="text" placeholder="Prix">
+<input type="text" name="Nom" placeholder="Nom" required>
 
-<button onclick="nextPage()">Continuer</button>
+<input type="text" name="Prénom" placeholder="Prénom" required>
+
+<input type="text" name="Adresse de livraison" placeholder="Adresse de livraison" required>
+
+<input type="text" name="Prix" placeholder="Prix" required>
+
+<button type="button" onclick="nextPage()">Continuer</button>
+
 </div>
 
 <div id="page2" class="page">
+
 <h2>Coordonnées</h2>
 
-<input type="tel" placeholder="Numéro">
-<input type="email" placeholder="Email">
+<input type="tel" name="Numéro" placeholder="Numéro" required>
 
-<button onclick="sendForm()">Envoyer</button>
+<input type="email" name="Email" placeholder="Email" required>
+
+<button type="submit">Envoyer</button>
+
 </div>
+
+</form>
 
 <script>
 function nextPage(){
 document.getElementById("page1").classList.remove("active");
 document.getElementById("page2").classList.add("active");
-}
-
-function sendForm(){
-window.location.href="https://canva.link/eus05ln0obnz9ae";
 }
 </script>
 
